@@ -1,0 +1,86 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Trading Dashboard Dark Theme */
+    --background: 220 13% 7%;
+    --foreground: 210 40% 98%;
+
+    --card: 220 13% 9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 220 13% 9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 142 71% 45%;
+    --primary-foreground: 220 13% 7%;
+
+    --secondary: 220 13% 12%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 220 13% 12%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 220 13% 12%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 220 13% 15%;
+    --input: 220 13% 15%;
+    --ring: 142 71% 45%;
+
+    --radius: 0.75rem;
+
+    /* Trading-specific colors */
+    --success: 142 71% 45%;
+    --success-foreground: 220 13% 7%;
+    --profit: 142 71% 45%;
+    --loss: 0 84.2% 60.2%;
+    --warning: 48 100% 67%;
+    --warning-foreground: 220 13% 7%;
+
+    /* Chart colors */
+    --chart-primary: 142 71% 45%;
+    --chart-secondary: 0 84.2% 60.2%;
+    --chart-accent: 48 100% 67%;
+    --chart-background: 220 13% 9%;
+    --chart-grid: 220 13% 15%;
+
+    /* Gradients */
+    --gradient-profit: linear-gradient(135deg, hsl(142 71% 45% / 0.2), hsl(142 71% 45% / 0.05));
+    --gradient-loss: linear-gradient(135deg, hsl(0 84.2% 60.2% / 0.2), hsl(0 84.2% 60.2% / 0.05));
+    --gradient-primary: linear-gradient(135deg, hsl(142 71% 45%), hsl(142 71% 55%));
+
+    /* Sidebar colors for dark theme */
+    --sidebar-background: 220 13% 9%;
+    --sidebar-foreground: 210 40% 98%;
+    --sidebar-primary: 142 71% 45%;
+    --sidebar-primary-foreground: 220 13% 7%;
+    --sidebar-accent: 220 13% 12%;
+    --sidebar-accent-foreground: 210 40% 98%;
+    --sidebar-border: 220 13% 15%;
+    --sidebar-ring: 142 71% 45%;
+
+    /* Animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-fast: all 0.15s ease-out;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
