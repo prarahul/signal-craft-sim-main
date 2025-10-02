@@ -3,8 +3,12 @@ import express from 'express';
 import cors from 'cors';
 import alphavantage from 'alphavantage';
 
+console.log("--- Server starting up... ---");
+console.log(`[DEBUG] Current NODE_ENV: ${process.env.NODE_ENV}`);
+
 // Only load .env file in development
 if (process.env.NODE_ENV !== 'production') {
+    console.log("[INFO] Not in production, loading .env file.");
     dotenv.config();
 }
 
@@ -13,8 +17,12 @@ const port = process.env.PORT || 3001; // Use Render's port, or 3001 for local
 
 // Check for the API key and throw an error if it's missing
 const apiKey = process.env.ALPHA_VANTAGE_API_KEY;
+
+console.log(`[DEBUG] API Key is present: ${!!apiKey}`);
+
 if (!apiKey) {
-    throw new Error("ALPHA_VANTAGE_API_KEY is not defined in the .env file.");
+    console.error("[FATAL] ALPHA_VANTAGE_API_KEY is not defined. Shutting down.");
+    throw new Error("ALPHA_VANTAGE_API_KEY is not defined in the environment.");
 }
 
 // Initialize alphavantage with the validated key
