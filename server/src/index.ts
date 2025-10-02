@@ -1,3 +1,4 @@
+// A new comment to force a save.
 import dotenv from 'dotenv';
 import express from 'express';
 import cors from 'cors';
@@ -13,7 +14,7 @@ if (process.env.NODE_ENV !== 'production') {
 }
 
 const app = express();
-const port = process.env.PORT || 3001; // Use Render's port, or 3001 for local
+const port = process.env.PORT || 3001;
 
 // Check for the API key and throw an error if it's missing
 const apiKey = process.env.ALPHA_VANTAGE_API_KEY;
