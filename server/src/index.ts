@@ -67,5 +67,9 @@ app.get('/api/historical-data/:symbol', async (req, res) => {
 });
 
 app.listen(port, () => {
-    console.log(`Server is running on http://localhost:${port}`);
+    if (process.env.NODE_ENV === 'production') {
+        console.log(`Server is listening on port ${port}`);
+    } else {
+        console.log(`Server is running on http://localhost:${port}`);
+    }
 });
