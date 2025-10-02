@@ -1,9 +1,12 @@
 import dotenv from 'dotenv';
-dotenv.config(); // This MUST be the first line to load environment variables
-
 import express from 'express';
 import cors from 'cors';
 import alphavantage from 'alphavantage';
+
+// Only load .env file in development
+if (process.env.NODE_ENV !== 'production') {
+    dotenv.config();
+}
 
 const app = express();
 const port = process.env.PORT || 3001; // Use Render's port, or 3001 for local
